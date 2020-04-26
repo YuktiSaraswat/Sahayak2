@@ -146,6 +146,10 @@ public class MainActivity extends AppCompatActivity {
             Intent intentd = new Intent(MainActivity.this, Volunteers.class);
             startActivity(intentd);
         }
+        else if(sr.contentEquals("search for relative") || sr.contentEquals("search for relatives")){
+            Intent intentf = new Intent(MainActivity.this, DetailsForm.class);
+            startActivity(intentf);
+        }
         else{
             Toast.makeText(this, "Invalid Search", Toast.LENGTH_SHORT).show();
         }
