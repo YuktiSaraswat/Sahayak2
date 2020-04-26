@@ -76,23 +76,31 @@ public class DetailsForm extends AppCompatActivity
                 else {
                     Fileuploader();
                 }
-                int age=Integer.parseInt(txtage.getText().toString().trim());
-                Long phn=Long.parseLong(txtphn.getText().toString().trim());
-                Long rphn=Long.parseLong(txtRphn.getText().toString().trim());
+                    int age = Integer.parseInt(txtage.getText().toString().trim());
+                    Long phn = Long.parseLong(txtphn.getText().toString().trim());
+                    Long rphn = Long.parseLong(txtRphn.getText().toString().trim());
 
-                member.setName(txtname.getText().toString().trim());
-                member.setAge(age);
-                member.setEmail(txtmail.getText().toString().trim());
-                member.setPhone(phn);
-                member.setAddress(txtaddress.getText().toString().trim());
-                member.setCity(txtcity.getText().toString().trim());
-                member.setState(txtstate.getText().toString().trim());
-                member.setOther(txtother.getText().toString().trim());
-                member.setRName(txtRname.getText().toString().trim());
-                member.setRPhone(rphn);
-                member.setREmail(txtRmail.getText().toString().trim());
-                reff.push().setValue(member);
-                Toast.makeText(DetailsForm.this, "Inserted Successfully", Toast.LENGTH_LONG).show();
+                    member.setName(txtname.getText().toString().trim());
+                    member.setAge(age);
+                    member.setEmail(txtmail.getText().toString().trim());
+                    member.setPhone(phn);
+                    member.setAddress(txtaddress.getText().toString().trim());
+                    member.setCity(txtcity.getText().toString().trim());
+                    member.setState(txtstate.getText().toString().trim());
+                    member.setOther(txtother.getText().toString().trim());
+                    member.setRName(txtRname.getText().toString().trim());
+                    member.setRPhone(rphn);
+                    member.setREmail(txtRmail.getText().toString().trim());
+                    reff.push().setValue(member);
+                    Toast.makeText(DetailsForm.this, "Record added Successfully", Toast.LENGTH_LONG).show();
+                    String[] TO_EMAILS = {"yukti.saraswat99@gmail.com", "divyaahuja1432@gmail.com", "harshitasaxena012@gmail.com"};
+                    Intent i = new Intent(Intent.ACTION_SENDTO);
+                    i.setData(Uri.parse("mailto:"));
+                    i.putExtra(Intent.EXTRA_EMAIL, TO_EMAILS);
+                    i.putExtra(Intent.EXTRA_SUBJECT, "Enquiry for " + txtRname.getText().toString().trim());
+                    i.putExtra(Intent.EXTRA_TEXT, txtRname.getText().toString().trim() + "\n" + txtage.getText().toString().trim()+ "\n" + txtother.getText().toString().trim() + "\nIf found then Contact: " + txtname.getText().toString().trim() + "\n" + txtphn.getText().toString().trim() + "\n" + txtaddress.getText().toString().trim() + "," + txtcity.getText().toString().trim() + "," + txtstate.getText().toString().trim());
+                    startActivity(Intent.createChooser(i, "Choose one application"));
+
             }
         });
     }
@@ -107,13 +115,13 @@ public class DetailsForm extends AppCompatActivity
             img.setImageURI(imguri);
         }
     }
-    private String getExtension(Uri uri)
+    public String getExtension(Uri uri)
     {
         ContentResolver cr=getContentResolver();
         MimeTypeMap mimeTypeMap=MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(cr.getType(uri));
     }
-    private void Fileuploader()
+    public void Fileuploader()
     {
         StorageReference Ref=mStorageRef.child(System.currentTimeMillis()+"."+getExtension(imguri));
         uploadTask=Ref.putFile(imguri)
@@ -134,7 +142,7 @@ public class DetailsForm extends AppCompatActivity
                 });
     }
 
-    private void Filechooser()
+    public void Filechooser()
     {
         Intent intent=new Intent();
         intent.setType("image/*");

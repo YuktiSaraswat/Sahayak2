@@ -81,19 +81,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:onClick="relative"
-            android:background="@android:color/holo_green_light"
-            android:layout_marginTop="40dp"
-            android:text="Search ur relative"/>
-        <Button
-            android:id="@+id/b7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:onClick="relative1"
             android:background="@android:color/holo_green_light"
             android:layout_marginTop="40dp"
-            android:text="Details form"/>
+            android:text="Search for relatives"/>
+
     <Button
         android:id="@+id/b3"
         android:layout_width="match_parent"

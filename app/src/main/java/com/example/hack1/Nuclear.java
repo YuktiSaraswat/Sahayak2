@@ -77,7 +77,7 @@ private DrawerLayout drawer;
         int id = item.getItemId();
 
         if (id == R.id.action_settings) {
-            Intent intent1 = new Intent(Nuclear.this, UK_glance.class);
+            Intent intent1 = new Intent(Nuclear.this, GoogleMapDemo.class);
             startActivity(intent1);
             return false;
         }

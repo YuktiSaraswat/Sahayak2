@@ -13,17 +13,17 @@
         tools:layout_editor_absoluteY="4dp">
 
 
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Earthquake Hazard Zonation"
-        android:textSize="20sp" />
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:src="@drawable/earthquake_zone_map" />
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Earthquake Hazard Zonation"
+            android:textSize="20sp" />
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:src="@drawable/earthquake_zone_map" />
     </LinearLayout>
 
 </FrameLayout>

@@ -76,7 +76,7 @@ private DrawerLayout drawer;
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            Intent intent1 = new Intent(Floods.this, UK_glance.class);
+            Intent intent1 = new Intent(Floods.this, GoogleMapDemo.class);
             startActivity(intent1);
             return false;
         }

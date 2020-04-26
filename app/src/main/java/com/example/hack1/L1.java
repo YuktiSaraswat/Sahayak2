@@ -31,7 +31,7 @@ public class L1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_e1, container, false);
+        View v = inflater.inflate(R.layout.fragment_l1, container, false);
         i = (ImageButton) v.findViewById(R.id.i);
         t1 = (TextView) v.findViewById(R.id.t1);
 

@@ -1,5 +1,6 @@
 package com.example.hack1;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -75,7 +76,9 @@ private DrawerLayout drawer;
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
-            return true;
+            Intent intent1 = new Intent(Landslides.this, GoogleMapDemo.class);
+            startActivity(intent1);
+            return false;
         }
 
         return super.onOptionsItemSelected(item);
