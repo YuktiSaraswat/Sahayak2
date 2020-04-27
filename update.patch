@@ -1,0 +1,291 @@
+Index: app/src/main/java/com/example/hack1/Relative.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/hack1/Relative.java	(date 1587960852155)
++++ app/src/main/java/com/example/hack1/Relative.java	(date 1587960852155)
+@@ -0,0 +1,101 @@
++package com.example.hack1;
++
++public class Relative {
++    public String id1,txtname1,txtage1,txtmail1,txtphn1,txtaddress1,txtcity1,txtstate1,txtother1,txtRname1,txtRmail1,txtRphn1;
++    public Relative()
++    {
++
++    }
++
++    public Relative(String id1, String txtname1,String txtage1,String txtmail1,String txtphn1,String txtaddress1,String txtcity1,String txtstate1,String txtother1,String txtRname1,String txtRmail1,String txtRphn1) {
++        this.id1=id1;
++        this.txtname1=txtname1;
++        this.txtage1 =txtage1;
++        this.txtmail1=txtmail1;
++        this.txtphn1 = txtphn1;
++        this.txtaddress1 = txtaddress1;
++        this.txtcity1 = txtcity1;
++        this.txtstate1 = txtstate1;
++        this.txtother1 = txtother1;
++        this.txtRname1 = txtRname1;
++        this.txtRmail1 = txtRmail1;
++        this.txtRphn1 = txtRphn1;
++    }
++
++    public void setId1(String id1) {
++        this.id1 = id1;
++    }
++
++    public void setTxtname1(String txtname1) {
++        this.txtname1 = txtname1;
++    }
++
++    public void setTxtage1(String txtage1) {
++        this.txtage1 = txtage1;
++    }
++
++    public void setTxtmail1(String txtmail1) {
++        this.txtmail1 = txtmail1;
++    }
++
++    public void setTxtphn1(String txtphn1) {
++        this.txtphn1 = txtphn1;
++    }
++
++    public void setTxtaddress1(String txtaddress1) {
++        this.txtaddress1 = txtaddress1;
++    }
++
++    public void setTxtcity1(String txtcity1) {
++        this.txtcity1 = txtcity1;
++    }
++
++    public void setTxtstate1(String txtstate1) {
++        this.txtstate1 = txtstate1;
++    }
++
++    public void setTxtother1(String txtother1) {
++        this.txtother1 = txtother1;
++    }
++
++    public void setTxtRname1(String txtRname1) {
++        this.txtRname1 = txtRname1;
++    }
++    public void setTxtRmail1(String txtRmail1) {
++        this.txtRmail1 = txtRmail1;
++    }
++    public void setTxtRphn1(String txtRphn1) {
++        this.txtRphn1 = txtRphn1;
++    }
++    public String getId1() {
++        return id1;
++    }
++
++    public String getTxtname1() {
++        return txtname1;
++    }
++
++    public String getTxtage1() {
++        return txtage1;
++    }
++
++    public String getTxtmail1() {
++        return txtmail1;
++    }
++
++    public String getTxtphn1() {
++        return txtphn1;
++    }
++
++    public String getTxtaddress1() {
++        return txtaddress1;
++    }
++    public String getTxtcity1(){return txtcity1;}
++    public String getTxtstate1(){return txtstate1;}
++    public String getTxtother1() {
++        return txtother1;
++    }
++    public String getTxtRname1(){return txtRname1;}
++    public String getTxtRmail1(){return txtRmail1;}
++    public String getTxtRphn1(){return txtRphn1;}
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/misc.xml	(date 1587899445000)
++++ .idea/misc.xml	(date 1588009056906)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: app/src/main/java/com/example/hack1/DetailsForm.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/hack1/DetailsForm.java	(date 1587899445000)
++++ app/src/main/java/com/example/hack1/DetailsForm.java	(date 1587966028813)
+@@ -24,6 +24,31 @@
+ import com.google.firebase.storage.StorageTask;
+ import com.google.firebase.storage.UploadTask;
+ 
++import com.google.android.gms.tasks.OnCompleteListener;
++import com.google.android.gms.tasks.Task;
++import com.google.firebase.auth.AuthResult;
++import com.google.firebase.auth.FirebaseAuth;
++import com.google.firebase.database.DataSnapshot;
++import com.google.firebase.database.DatabaseError;
++import com.google.firebase.database.Query;
++import com.google.firebase.database.ValueEventListener;
++import com.google.firebase.firestore.DocumentReference;
++import com.google.firebase.firestore.FirebaseFirestore;
++
++import com.google.android.gms.tasks.OnCompleteListener;
++import com.google.android.gms.tasks.OnSuccessListener;
++import com.google.android.gms.tasks.Task;
++import com.google.firebase.auth.AuthResult;
++import com.google.firebase.auth.FirebaseAuth;
++import com.google.firebase.database.DataSnapshot;
++import com.google.firebase.database.DatabaseError;
++import com.google.firebase.database.DatabaseReference;
++import com.google.firebase.database.FirebaseDatabase;
++import com.google.firebase.database.Query;
++import com.google.firebase.database.ValueEventListener;
++import com.google.firebase.firestore.DocumentReference;
++import com.google.firebase.firestore.FirebaseFirestore;
++
+ public class DetailsForm extends AppCompatActivity
+ {
+     EditText txtname,txtage,txtmail,txtphn,txtaddress,txtcity,txtstate,txtother,txtRname,txtRmail,txtRphn;
+@@ -33,6 +58,9 @@
+     private StorageTask uploadTask;
+     public Uri imguri;
+     DatabaseReference reff;
++    FirebaseAuth mfirebaseAuth;
++    FirebaseFirestore fstore;
++    DatabaseReference databaseReference;
+ 
+ 
+     Member member;
+@@ -58,6 +86,9 @@
+         btnsubmit=(Button)findViewById(R.id.btnsubmit);
+         ch=(Button)findViewById(R.id.btnimage);
+         img=(ImageView)findViewById(R.id.imgview);
++        mfirebaseAuth=FirebaseAuth.getInstance();
++        fstore = FirebaseFirestore.getInstance();
++        databaseReference = FirebaseDatabase.getInstance().getReference("details");
+         member=new Member();
+         reff= FirebaseDatabase.getInstance().getReference().child("Member");
+         ch.setOnClickListener(new View.OnClickListener() {
+@@ -69,6 +100,79 @@
+         btnsubmit.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
++                String txtname1 = txtname.getText().toString().trim();
++                String txtage1 = txtage.getText().toString().trim();
++                String txtmail1 = txtmail.getText().toString().trim();
++                String txtphn1 = txtphn.getText().toString().trim();
++                String txtaddress1 = txtaddress.getText().toString().trim();
++                String txtcity1 = txtcity.getText().toString().trim();
++                String txtstate1 = txtstate.getText().toString().trim();
++                String txtother1 = txtother.getText().toString().trim();
++                String txtRname1 = txtRname.getText().toString().trim();
++                String txtRmail1 = txtRmail.getText().toString().trim();
++                String txtRphn1 = txtRphn.getText().toString().trim();
++                if (txtname1.isEmpty()) {
++                    txtname.setError("Please Enter Name");
++                    txtname.requestFocus();
++                    return;
++                }
++                if (txtage1.isEmpty()) {
++                    txtage.setError("Please Enter Age");
++                    txtage.requestFocus();
++                    return;
++                }
++                if (txtmail1.isEmpty()) {
++                    txtmail.setError("Please Enter your E-mail Address");
++                    txtmail.requestFocus();
++                    return;
++                }
++                if (txtphn1.isEmpty()) {
++                    txtphn.setError("Please Enter Your Phone No.");
++                    txtphn.requestFocus();
++                    return;
++                }
++                if (txtaddress1.isEmpty()) {
++                    txtaddress.setError("Please Enter Your Address");
++                    txtaddress.requestFocus();
++                    return;
++                }
++                if (txtcity1.isEmpty()) {
++                    txtcity.setError("Please Enter Your City");
++                    txtcity.requestFocus();
++                    return;
++                }
++                if (txtstate1.isEmpty()) {
++                    txtstate.setError("Please Enter Your State");
++                    txtstate.requestFocus();
++                    return;
++                }
++                if (txtother1.isEmpty()) {
++                    txtother.setError("Please Enter Other Details");
++                    txtother.requestFocus();
++                    return;
++                }
++                if (txtRname1.isEmpty()) {
++                    txtRname.setError("Please Enter Your Name");
++                    txtRname.requestFocus();
++                    return;
++                }
++                if (txtRmail1.isEmpty()) {
++                    txtRmail.setError("Please Enter Your Mail");
++                    txtRmail.requestFocus();
++                    return;
++                }
++                if (txtRphn1.isEmpty()) {
++                    txtRphn.setError("Please Enter Mobile Number");
++                    txtRphn.requestFocus();
++                    return;
++                }
++                String id = databaseReference.push().getKey();
++                Relative relative=new Relative(id,txtname1,txtage1,txtmail1,txtphn1,txtaddress1,txtcity1,txtstate1,txtother1,txtRname1,txtRmail1,txtRphn1);
++                databaseReference.child(id).setValue(relative);
++                Toast.makeText(DetailsForm.this, "Information Submitted Successfully!", Toast.LENGTH_SHORT).show();
++                Intent intents = new Intent(DetailsForm.this, MainActivity.class);
++                startActivity(intents);
++
+                 if(uploadTask!=null && uploadTask.isInProgress())
+                 {
+                     Toast.makeText(DetailsForm.this, "Upload in Progress", Toast.LENGTH_LONG).show();
+@@ -76,7 +180,7 @@
+                 else {
+                     Fileuploader();
+                 }
+-                    int age = Integer.parseInt(txtage.getText().toString().trim());
++                   /* int age = Integer.parseInt(txtage.getText().toString().trim());
+                     Long phn = Long.parseLong(txtphn.getText().toString().trim());
+                     Long rphn = Long.parseLong(txtRphn.getText().toString().trim());
+ 
+@@ -92,14 +196,15 @@
+                     member.setRPhone(rphn);
+                     member.setREmail(txtRmail.getText().toString().trim());
+                     reff.push().setValue(member);
+-                    Toast.makeText(DetailsForm.this, "Record added Successfully", Toast.LENGTH_LONG).show();
++                    Toast.makeText(DetailsForm.this, "Record added Successfully", Toast.LENGTH_LONG).show();*/
+                     String[] TO_EMAILS = {"yukti.saraswat99@gmail.com", "divyaahuja1432@gmail.com", "harshitasaxena012@gmail.com"};
+                     Intent i = new Intent(Intent.ACTION_SENDTO);
+                     i.setData(Uri.parse("mailto:"));
+                     i.putExtra(Intent.EXTRA_EMAIL, TO_EMAILS);
+                     i.putExtra(Intent.EXTRA_SUBJECT, "Enquiry for " + txtRname.getText().toString().trim());
+                     i.putExtra(Intent.EXTRA_TEXT, txtRname.getText().toString().trim() + "\n" + txtage.getText().toString().trim()+ "\n" + txtother.getText().toString().trim() + "\nIf found then Contact: " + txtname.getText().toString().trim() + "\n" + txtphn.getText().toString().trim() + "\n" + txtaddress.getText().toString().trim() + "," + txtcity.getText().toString().trim() + "," + txtstate.getText().toString().trim());
+-                    startActivity(Intent.createChooser(i, "Choose one application"));
++
++                startActivity(Intent.createChooser(i, "Choose one application"));
+ 
+             }
+         });
